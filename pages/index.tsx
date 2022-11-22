@@ -1,3 +1,9 @@
+import { AppLayout } from './layout/AppLayout';
+
 export default function Home() {
-    return <div>Hello World!!!</div>;
+    return (
+        <AppLayout>
+            <div></div>
+        </AppLayout>
+    );
 }
