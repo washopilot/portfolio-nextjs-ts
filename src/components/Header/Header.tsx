@@ -1,4 +1,7 @@
 import { CloseIcon, HamburgerIcon, MoonIcon, SunIcon } from '@chakra-ui/icons';
+import NextLink from 'next/link';
+import { useRouter } from 'next/router';
+
 import {
     Box,
     Button,
@@ -6,6 +9,7 @@ import {
     Flex,
     HStack,
     IconButton,
+    Link,
     Stack,
     useColorMode,
     useColorModeValue,
@@ -19,6 +23,9 @@ import NavLink from './NavLink';
 export default function Header() {
     const { colorMode, toggleColorMode } = useColorMode();
     const { isOpen, onOpen, onClose } = useDisclosure();
+
+    const router = useRouter();
+
     return (
         <>
             <Box>
@@ -46,10 +53,12 @@ export default function Header() {
                             />
 
                             <HStack spacing={8} alignItems={'center'}>
-                                <Box>Logo</Box>s
+                                <NextLink href={'/'} legacyBehavior passHref>
+                                    <Link _hover={{ textDecoration: 'none' }}>LOGO</Link>
+                                </NextLink>
                                 <HStack as={'nav'} spacing={4} display={{ base: 'none', md: 'flex' }}>
                                     {Links.map((link) => (
-                                        <NavLink key={link.label} href={link.href}>
+                                        <NavLink key={link.label} href={link.href} active={router.asPath == link.href}>
                                             {link.label}
                                         </NavLink>
                                     ))}

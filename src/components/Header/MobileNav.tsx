@@ -1,4 +1,5 @@
 import { Box, Stack, useColorModeValue } from '@chakra-ui/react';
+import { useRouter } from 'next/router';
 
 import { NAV_ITEMS as Links } from './NavData';
 import NavLink from './NavLink';
@@ -8,6 +9,7 @@ interface MobileNavProps {
 }
 
 export const MobileNav = ({ isOpen }: MobileNavProps) => {
+    const router = useRouter();
     const color = useColorModeValue('rgba(255, 255, 255, 0.8)', 'rgba(26, 32, 44, 0.8)');
 
     if (!isOpen) return null;
@@ -27,7 +29,7 @@ export const MobileNav = ({ isOpen }: MobileNavProps) => {
             }}>
             <Stack as={'nav'} spacing={4}>
                 {Links.map((link, idx) => (
-                    <NavLink key={link.label} href={link.href}>
+                    <NavLink key={link.label} href={link.href} active={router.asPath == link.href}>
                         {link.label}
                     </NavLink>
                 ))}

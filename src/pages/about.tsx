@@ -1,7 +1,8 @@
-import React from 'react';
+import Link from 'next/link';
+import { AppLayout } from '../layout/AppLayout';
 
 const about = () => {
-    return <div>about</div>;
+    return <AppLayout>About page</AppLayout>;
 };
 
 export default about;

@@ -5,15 +5,16 @@ interface NavItem {
 
 export const NAV_ITEMS: NavItem[] = [
     {
-        label: 'About',
+        label: 'Inicio',
+        href: '/'
+    },
+    {
+        label: 'Acerca de',
         href: '/about'
     },
     {
-        label: 'Projects',
+        label: 'Proyectos',
         href: '/projects'
     },
-    {
-        label: 'Blog',
-        href: '/blog'
-    }
+    
 ];
