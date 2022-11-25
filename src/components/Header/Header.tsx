@@ -1,17 +1,15 @@
-import { CloseIcon, HamburgerIcon, MoonIcon, SunIcon } from '@chakra-ui/icons';
+import { CloseIcon, HamburgerIcon } from '@chakra-ui/icons';
 import NextLink from 'next/link';
 import { useRouter } from 'next/router';
 
 import {
     Box,
-    Button,
     Container,
     Flex,
     HStack,
     IconButton,
     Link,
     Stack,
-    useColorMode,
     useColorModeValue,
     useDisclosure
 } from '@chakra-ui/react';
@@ -19,9 +17,9 @@ import {
 import { MobileNav } from './MobileNav';
 import { NAV_ITEMS as Links } from './NavData';
 import NavLink from './NavLink';
+import ThemeToggleButton from './ThemeToggleButton';
 
 export default function Header() {
-    const { colorMode, toggleColorMode } = useColorMode();
     const { isOpen, onOpen, onClose } = useDisclosure();
 
     const router = useRouter();
@@ -67,9 +65,10 @@ export default function Header() {
 
                             <Flex alignItems={'center'}>
                                 <Stack direction={'row'} spacing={7}>
-                                    <Button onClick={toggleColorMode}>
+                                    {/* <Button onClick={toggleColorMode}>
                                         {colorMode === 'light' ? <MoonIcon /> : <SunIcon />}
-                                    </Button>
+                                    </Button> */}
+                                    <ThemeToggleButton />
                                 </Stack>
                             </Flex>
                         </Flex>
