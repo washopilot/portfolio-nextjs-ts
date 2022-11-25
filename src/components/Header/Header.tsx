@@ -37,7 +37,7 @@ export default function Header() {
                     zIndex="999"
                     justify={'center'}
                     css={{
-                        backdropFilter: 'saturate(180%) blur(2px)',
+                        backdropFilter: 'blur(5px)',
                         backgroundColor: useColorModeValue('rgba(255, 255, 255, 0.8)', 'rgba(26, 32, 44, 0.8)')
                     }}>
                     <Container as={Flex} maxW={'7xl'} align={'center'}>
@@ -65,9 +65,6 @@ export default function Header() {
 
                             <Flex alignItems={'center'}>
                                 <Stack direction={'row'} spacing={7}>
-                                    {/* <Button onClick={toggleColorMode}>
-                                        {colorMode === 'light' ? <MoonIcon /> : <SunIcon />}
-                                    </Button> */}
                                     <ThemeToggleButton />
                                 </Stack>
                             </Flex>

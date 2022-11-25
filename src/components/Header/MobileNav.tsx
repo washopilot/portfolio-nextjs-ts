@@ -23,8 +23,9 @@ export const MobileNav = ({ isOpen }: MobileNavProps) => {
             bg={'white'}
             w={'full'}
             minH={'calc(100vh - 4em)'}
+            zIndex={999}
             css={{
-                backdropFilter: 'saturate(180%) blur(2px)',
+                backdropFilter: 'blur(5px)',
                 backgroundColor: `${color}`
             }}>
             <Stack as={'nav'} spacing={4}>
