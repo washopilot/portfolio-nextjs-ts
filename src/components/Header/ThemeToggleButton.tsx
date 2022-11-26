@@ -14,7 +14,9 @@ const ThemeToggleButton = () => {
                 animate={{ y: 0, opacity: 1 }}
                 exit={{ y: 20, opacity: 0 }}
                 transition={{ duration: 0.2 }}>
-                <Button onClick={toggleColorMode}>{colorMode === 'light' ? <MoonIcon /> : <SunIcon />}</Button>
+                <Button onClick={toggleColorMode} bg={useColorModeValue('#553C9A', '#937300')}>
+                    {colorMode === 'light' ? <MoonIcon /> : <SunIcon />}
+                </Button>
             </motion.div>
         </AnimatePresence>
     );
