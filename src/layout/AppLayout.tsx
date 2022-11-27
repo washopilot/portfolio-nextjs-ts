@@ -2,7 +2,7 @@ import { motion } from 'framer-motion';
 import { ReactNode } from 'react';
 
 // import { Footer } from '@/components/Footer';
-import Header from '../components/Header/Header';
+import Header from '../components/Navbar/Navbar';
 
 interface AppLayoutProps {
     children: ReactNode;
@@ -17,7 +17,7 @@ const variants = {
 export const AppLayout = ({ children }: AppLayoutProps) => {
     return (
         <>
-            <Header />
+            {/* <Header /> */}
             <motion.article
                 initial="hidden"
                 animate="enter"
