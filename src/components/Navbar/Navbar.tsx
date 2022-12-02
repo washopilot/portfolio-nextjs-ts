@@ -2,7 +2,17 @@ import { CloseIcon, HamburgerIcon } from '@chakra-ui/icons';
 import NextLink from 'next/link';
 import { useRouter } from 'next/router';
 
-import { Container, Flex, HStack, IconButton, Link, Stack, useColorModeValue, useDisclosure } from '@chakra-ui/react';
+import {
+    Container,
+    Fade,
+    Flex,
+    HStack,
+    IconButton,
+    Link,
+    Stack,
+    useColorModeValue,
+    useDisclosure
+} from '@chakra-ui/react';
 
 import { MobileNav } from './MobileNav';
 import { NAV_ITEMS as Links } from './NavData';
@@ -10,7 +20,7 @@ import NavLink from './NavLink';
 import ThemeToggleButton from './ThemeToggleButton';
 
 const Navbar = () => {
-    const { isOpen, onOpen, onClose } = useDisclosure();
+    const { isOpen, onOpen, onClose, onToggle } = useDisclosure();
 
     const router = useRouter();
 
@@ -36,7 +46,7 @@ const Navbar = () => {
                             icon={isOpen ? <CloseIcon /> : <HamburgerIcon />}
                             aria-label={'Open Menu'}
                             display={{ md: 'none' }}
-                            onClick={isOpen ? onClose : onOpen}
+                            onClick={onToggle}
                         />
 
                         <HStack spacing={8} alignItems={'center'}>
@@ -68,7 +78,14 @@ const Navbar = () => {
                     </Flex>
                 </Container>
             </Flex>
-            <MobileNav isOpen={isOpen} />
+            <Fade
+                in={isOpen}
+                transition={{
+                    enter: { duration: '0.3', ease: 'easeInOut' },
+                    exit: { duration: '0.3', ease: 'easeInOut' }
+                }}>
+                <MobileNav />
+            </Fade>
         </>
     );
 };
