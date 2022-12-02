@@ -3,8 +3,8 @@ import theme from '../theme/theme';
 
 import { AnimatePresence } from 'framer-motion';
 import type { AppProps } from 'next/app';
-import Fonts from '../components/Fonts';
 import MainLayout from '../layout/MainLayout';
+import Fonts from '../components/Fonts';
 
 if (typeof window !== 'undefined') {
     window.history.scrollRestoration = 'manual';

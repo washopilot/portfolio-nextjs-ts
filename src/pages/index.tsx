@@ -12,7 +12,7 @@ export default function Home() {
                     textAlign="center"
                     bg={useColorModeValue('whiteAlpha.500', 'whiteAlpha.200')}
                     css={{ backdropFilter: 'blur(10px)' }}>
-                    Hola, Soy un desarrollador independiente radicado en Loja - Ecuador!
+                    Hola, Soy un desarrollador independiente radicado en Ecuador
                 </Box>
             </Container>
         </AppLayout>

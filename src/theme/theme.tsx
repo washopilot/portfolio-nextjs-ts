@@ -9,6 +9,11 @@ const theme = extendTheme({
             }
         })
     },
+    fonts: {
+        body: `'Open Sans',sans-serif`
+        // heading: 'Georgia, serif',
+        // mono: 'Menlo, monospace'
+    },
     config: {
         initialColorMode: 'light'
     }

@@ -41,7 +41,12 @@ const Navbar = () => {
 
                         <HStack spacing={8} alignItems={'center'}>
                             <NextLink href={'/'} legacyBehavior passHref>
-                                <Link _hover={{ textDecoration: 'none' }} fontFamily={'M PLUS Rounded 1c", sans-serif'}>
+                                <Link
+                                    as={'text'}
+                                    _hover={{ textDecoration: 'none' }}
+                                    fontWeight={'bold'}
+                                    fontSize={'3xl'}
+                                    fontFamily={`'Covered By Your Grace'`}>
                                     Fernando Chicaiza
                                 </Link>
                             </NextLink>
