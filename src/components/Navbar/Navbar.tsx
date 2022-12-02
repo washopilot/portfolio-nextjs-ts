@@ -26,7 +26,7 @@ const Navbar = () => {
                 zIndex="999"
                 justify={'center'}
                 css={{
-                    backdropFilter: 'blur(5px)',
+                    backdropFilter: 'blur(2px)',
                     backgroundColor: useColorModeValue('rgba(255, 255, 255, 0.8)', 'rgba(26, 32, 44, 0.8)')
                 }}>
                 <Container as={Flex} maxW={'7xl'} align={'center'}>
@@ -50,6 +50,7 @@ const Navbar = () => {
                                     Fernando Chicaiza
                                 </Link>
                             </NextLink>
+
                             <HStack as={'nav'} spacing={4} display={{ base: 'none', md: 'flex' }}>
                                 {Links.map((link) => (
                                     <NavLink key={link.label} href={link.href} active={router.asPath == link.href}>
