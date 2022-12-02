@@ -12,7 +12,6 @@ const MainLayout = ({ children }: { children: ReactNode }) => {
                 <meta name="description" content="Fernando's HomePage" />
                 <meta name="author" content="Fernando Chicaiza" />
                 <meta name="author" content="washopilot" />
-                <link rel="apple-touch-icon" href="apple-touch-icon.png" />
                 <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
                 <meta name="twitter:title" content="Fernando Chicaiza" />
                 <meta name="twitter:card" content="summary_large_image" />
@@ -29,7 +28,7 @@ const MainLayout = ({ children }: { children: ReactNode }) => {
             <Navbar />
 
             <Container maxW="container.md" pt={14}>
-                {/* <LazyVoxelDog /> */}
+                {/* <LazyVoxelDog />   */}
 
                 {children}
 

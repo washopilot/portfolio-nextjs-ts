@@ -41,7 +41,9 @@ const Navbar = () => {
 
                         <HStack spacing={8} alignItems={'center'}>
                             <NextLink href={'/'} legacyBehavior passHref>
-                                <Link _hover={{ textDecoration: 'none' }}>LOGO</Link>
+                                <Link _hover={{ textDecoration: 'none' }} fontFamily={'M PLUS Rounded 1c", sans-serif'}>
+                                    Fernando Chicaiza
+                                </Link>
                             </NextLink>
                             <HStack as={'nav'} spacing={4} display={{ base: 'none', md: 'flex' }}>
                                 {Links.map((link) => (

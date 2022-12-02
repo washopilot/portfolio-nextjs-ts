@@ -1,11 +1,11 @@
 import { motion } from 'framer-motion';
+import Head from 'next/head';
 import { ReactNode } from 'react';
-
-// import { Footer } from '@/components/Footer';
-import Header from '../components/Navbar/Navbar';
+import { GridItemStyle } from '../components/GridItem';
 
 interface AppLayoutProps {
     children: ReactNode;
+    title?: string;
 }
 
 const variants = {
@@ -14,20 +14,26 @@ const variants = {
     exit: { opacity: 0, x: -0, y: 20 }
 };
 
-export const AppLayout = ({ children }: AppLayoutProps) => {
+export const AppLayout = ({ children, title }: AppLayoutProps) => {
+    const t = `${title} - Fernando Chicaiza`;
+
     return (
-        <>
-            {/* <Header /> */}
-            <motion.article
-                initial="hidden"
-                animate="enter"
-                exit="exit"
-                variants={variants}
-                transition={{ duration: 0.4, type: 'easeInOut' }}
-                style={{ position: 'relative' }}>
-                {children}
-                {/* <Footer /> */}
-            </motion.article>
-        </>
+        <motion.article
+            initial="hidden"
+            animate="enter"
+            exit="exit"
+            variants={variants}
+            transition={{ duration: 0.4, type: 'easeInOut' }}
+            style={{ position: 'relative' }}>
+            {title && (
+                <Head>
+                    <title>{t}</title>
+                    <meta name="twitter:title" content={t} />
+                    <meta property="og:title" content={t} />
+                </Head>
+            )}
+            {children}
+            <GridItemStyle />
+        </motion.article>
     );
 };
