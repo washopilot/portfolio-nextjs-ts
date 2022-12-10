@@ -1,19 +1,9 @@
 import { CloseIcon, HamburgerIcon } from '@chakra-ui/icons';
-import NextLink from 'next/link';
 import { useRouter } from 'next/router';
 
-import {
-    Container,
-    Fade,
-    Flex,
-    HStack,
-    IconButton,
-    Link,
-    Stack,
-    useColorModeValue,
-    useDisclosure
-} from '@chakra-ui/react';
+import { Container, Fade, Flex, HStack, IconButton, Stack, useColorModeValue, useDisclosure } from '@chakra-ui/react';
 
+import Logo from './Logo';
 import { MobileNav } from './MobileNav';
 import { NAV_ITEMS as Links } from './NavData';
 import NavLink from './NavLink';
@@ -50,16 +40,7 @@ const Navbar = () => {
                         />
 
                         <HStack spacing={8} alignItems={'center'}>
-                            <NextLink href={'/'} legacyBehavior passHref>
-                                <Link
-                                    as={'text'}
-                                    _hover={{ textDecoration: 'none' }}
-                                    fontWeight={'bold'}
-                                    fontSize={'3xl'}
-                                    fontFamily={`'Covered By Your Grace'`}>
-                                    Fernando Chicaiza
-                                </Link>
-                            </NextLink>
+                            <Logo />
 
                             <HStack as={'nav'} spacing={4} display={{ base: 'none', md: 'flex' }}>
                                 {Links.map((link) => (
