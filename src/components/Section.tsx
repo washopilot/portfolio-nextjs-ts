@@ -1,19 +1,21 @@
-import { Box } from '@chakra-ui/react';
+import { chakra, shouldForwardProp } from '@chakra-ui/react';
 import { motion } from 'framer-motion';
 
-// const StyledDiv = chakra(motion.div, {
-//     shouldForwardProp: (prop) => {
-//         return shouldForwardProp(prop) || prop === 'transition';
-//     }
-// });
+const MotionSection = chakra(motion.section, {
+    shouldForwardProp: (prop) => {
+        return shouldForwardProp(prop) || prop === 'transition';
+    }
+});
 
 const Section = ({ children, delay = 0 }: { children: React.ReactNode; delay?: number }) => (
-    <motion.section
+    <MotionSection
+        mb={6}
         initial={{ y: 10, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
-        transition={{ ease: 'easeIn', delay: delay }}>
-        <Box mb={6}>{children}</Box>
-    </motion.section>
+        // @ts-ignore no problem in operation, although type error appears.
+        transition={{ delay: delay, ease: 'easeIn' }}>
+        {children}
+    </MotionSection>
 );
 
 export default Section;
