@@ -10,8 +10,8 @@ const theme = extendTheme({
         })
     },
     fonts: {
-        body: `'Open Sans',sans-serif`
-        // heading: 'Georgia, serif',
+        body: `'Open Sans', sans-serif`,
+        heading: `'Open Sans', sans-serif`
         // mono: 'Menlo, monospace'
     },
     config: {
