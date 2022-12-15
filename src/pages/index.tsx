@@ -1,6 +1,7 @@
 import { Box, Container, Heading, useColorModeValue } from '@chakra-ui/react';
 import Image from 'next/image';
 import fotoPerfil from '../../public/assets/images/foto_perfil.jpg';
+import Paragraph from '../components/Paragraph';
 import Section from '../components/Section';
 import { AppLayout } from '../layout/AppLayout';
 
@@ -51,7 +52,10 @@ export default function Home() {
                     </Box>
                 </Box>
                 <Section delay={0.2}>
-                    <p>
+                    <Heading as="h3" variant="section-title">
+                        Acerca de
+                    </Heading>
+                    <Paragraph>
                         Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi, doloremque! Distinctio quisquam
                         nisi quae, fugit quidem tempora iure est minima, rem totam numquam. Possimus, voluptates!
                         commodi reprehenderit odit. Repudiandae accusamus libero quod, illum quisquam magni commodi
@@ -59,10 +63,10 @@ export default function Home() {
                         non sint veritatis, veniam numquam explicabo ducimus eos dolorem enim autem voluptas quae
                         blanditiis consequuntur voluptates repellat quaerat tempore earum nisi asperiores quam vel
                         obcaecati! Dolorem cum aut possimus pariatur repudiandae!
-                    </p>
+                    </Paragraph>
                 </Section>
                 <Section delay={0.4}>
-                    <p>
+                    <Paragraph>
                         Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi, doloremque! Distinctio quisquam
                         nisi quae, fugit quidem tempora iure est minima, rem totam numquam. Possimus, voluptates!
                         Expedita, quisquam quis fugit officiis dolore temporibus cupiditate consequatur in nisi minus
@@ -146,7 +150,7 @@ export default function Home() {
                         non sint veritatis, veniam numquam explicabo ducimus eos dolorem enim autem voluptas quae
                         blanditiis consequuntur voluptates repellat quaerat tempore earum nisi asperiores quam vel
                         obcaecati! Dolorem cum aut possimus pariatur repudiandae!
-                    </p>
+                    </Paragraph>
                 </Section>
             </Container>
         </AppLayout>

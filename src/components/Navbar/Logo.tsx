@@ -6,8 +6,8 @@ const Logo = () => {
     return (
         <motion.div
             className="box"
-            whileHover={{ scale: 1.1 }}
-            whileTap={{ scale: 0.9 }}
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
             transition={{ type: 'spring', stiffness: 400, damping: 17 }}>
             <NextLink href={'/'} legacyBehavior passHref>
                 <Link
