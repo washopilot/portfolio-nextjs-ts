@@ -29,7 +29,7 @@ const Navbar = () => {
                     backdropFilter: 'blur(2px)',
                     backgroundColor: useColorModeValue('rgba(255, 255, 255, 0.8)', 'rgba(26, 32, 44, 0.8)')
                 }}>
-                <Container as={Flex} maxW={'7xl'} align={'center'}>
+                <Container as={Flex} maxW={'4xl'} align={'center'}>
                     <Flex width={'full'} h={16} alignItems={'center'} justifyContent={'space-between'}>
                         <IconButton
                             size={'md'}

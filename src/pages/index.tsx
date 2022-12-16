@@ -12,7 +12,7 @@ import { AppLayout } from '../layout/AppLayout';
 export default function Home() {
     return (
         <AppLayout>
-            <Container>
+            <Container maxW={'max-content'}>
                 <Box
                     borderRadius="lg"
                     mb={6}

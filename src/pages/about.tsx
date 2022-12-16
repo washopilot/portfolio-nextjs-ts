@@ -5,8 +5,8 @@ import { AppLayout } from '../layout/AppLayout';
 
 const about = () => {
     return (
-        <AppLayout>
-            <Container>
+        <AppLayout title="Acerca de">
+            <Container maxW={'max-content'}>
                 <Section delay={0.2}>
                     <Paragraph>
                         Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptas, cupiditate possimus! Animi,
