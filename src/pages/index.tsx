@@ -1,5 +1,7 @@
-import { Box, Container, Heading, useColorModeValue } from '@chakra-ui/react';
+import { ChevronRightIcon } from '@chakra-ui/icons';
+import { Box, Button, Container, Heading, useColorModeValue } from '@chakra-ui/react';
 import Image, { ImageProps } from 'next/image';
+import NextLink from 'next/link';
 import { useState } from 'react';
 import fotoPerfil from '../../public/assets/images/foto_perfil.jpg';
 import Paragraph from '../components/Paragraph';
@@ -35,7 +37,7 @@ const Home = () => {
                         <Box
                             borderColor={useColorModeValue('gray.800', 'white')}
                             bgColor={useColorModeValue('gray.800', 'white')}
-                            borderWidth={5}
+                            borderWidth={3}
                             borderStyle="solid"
                             boxSize={130}
                             display="inline-block"
@@ -57,14 +59,21 @@ const Home = () => {
                         Acerca de
                     </Heading>
                     <Paragraph>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi, doloremque! Distinctio quisquam
-                        nisi quae, fugit quidem tempora iure est minima, rem totam numquam. Possimus, voluptates!
-                        commodi reprehenderit odit. Repudiandae accusamus libero quod, illum quisquam magni commodi
-                        earum tempora dignissimos quasi maiores recusandae cumque veniam? Sunt pariatur, expedita iusto
-                        non sint veritatis, veniam numquam explicabo ducimus eos dolorem enim autem voluptas quae
-                        blanditiis consequuntur voluptates repellat quaerat tempore earum nisi asperiores quam vel
-                        obcaecati! Dolorem cum aut possimus pariatur repudiandae!
+                        Fernando es un Desarrollador Freelancer radicado en Loja, Ecuador, con una marcada pasión por el
+                        mundo tecnológico y el diseño 3D. Primordialmente enfoca sus esfuerzos por la construcción de
+                        nuevos servicios digitales y aprendizaje continuo (para saciar su hambre por código funcional y
+                        elegante) desde la planeación y diseño eficiente para resolver problemas de la vida real que
+                        satisfaga las necesidades de sus clientes. Entusiasta y evangelista del ecosistema de React por
+                        excelencia, siempre se mantiene pendiente de las últimas novedades en el área del desarrollo
+                        Front-End.
                     </Paragraph>
+                    <Box textAlign="center" my={4}>
+                        <NextLink href="/works" passHref scroll={false}>
+                            <Button rightIcon={<ChevronRightIcon />} colorScheme="purple" variant="solid" size="sm">
+                                Mi portafolio
+                            </Button>
+                        </NextLink>
+                    </Box>
                 </Section>
                 <Section delay={0.4}>
                     <Paragraph>

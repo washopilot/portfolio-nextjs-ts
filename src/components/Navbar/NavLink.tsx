@@ -7,7 +7,8 @@ const NavLink = ({ children, href, active }: { children: ReactNode; href: string
     const { onClose } = useContext(IsOpenContext);
 
     const bg_color_hover = useColorModeValue('gray.200', 'gray.700');
-    const bg_color_active = 'purple.700';
+    const bg_color_active = useColorModeValue('purple.500', 'purple.200');
+    const color_active = useColorModeValue('white', 'black');
 
     return (
         <NextLink href={href} legacyBehavior passHref>
@@ -15,8 +16,9 @@ const NavLink = ({ children, href, active }: { children: ReactNode; href: string
                 px={2}
                 py={1}
                 bg={active ? bg_color_active : undefined}
-                color={active ? 'white' : undefined}
-                rounded={'none'}
+                borderRadius="md"
+                color={active ? color_active : undefined}
+                fontWeight={active ? 'bold' : undefined}
                 _hover={{
                     textDecoration: 'none',
                     bg: active ? undefined : bg_color_hover

@@ -5,7 +5,7 @@ const theme = extendTheme({
     styles: {
         global: (props: Record<string, string>) => ({
             body: {
-                bg: mode('#f0e7db', '#202023')(props)
+                bg: mode('#e6e6ff', '#202023')(props)
             }
         })
     },

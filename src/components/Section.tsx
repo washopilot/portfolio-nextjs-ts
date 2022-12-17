@@ -9,7 +9,7 @@ const MotionSection = chakra(motion.section, {
 
 const Section = ({ children, delay = 0 }: { children: React.ReactNode; delay?: number }) => (
     <MotionSection
-        mb={6}
+        mb={10}
         initial={{ y: 10, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         // @ts-ignore no problem in operation, although type error appears.

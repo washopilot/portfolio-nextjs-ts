@@ -9,12 +9,8 @@ export const NAV_ITEMS: NavItem[] = [
         href: '/'
     },
     {
-        label: 'Acerca de',
-        href: '/about'
-    },
-    {
         label: 'Proyectos',
-        href: '/projects'
+        href: '/works'
     },
     
 ];

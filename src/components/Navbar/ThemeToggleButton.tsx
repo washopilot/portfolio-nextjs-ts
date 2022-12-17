@@ -14,7 +14,10 @@ const ThemeToggleButton = () => {
                 animate={{ y: 0, opacity: 1 }}
                 exit={{ y: 20, opacity: 0 }}
                 transition={{ duration: 0.2 }}>
-                <Button onClick={toggleColorMode} bg={useColorModeValue('#553C9A', '#937300')}>
+                <Button
+                    onClick={toggleColorMode}
+                    color={colorMode == 'dark' ? 'black' : 'white'}
+                    bg={useColorModeValue('purple.500', 'orange.300')}>
                     {colorMode === 'light' ? <MoonIcon /> : <SunIcon />}
                 </Button>
             </motion.div>

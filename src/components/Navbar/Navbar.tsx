@@ -62,8 +62,8 @@ const Navbar = () => {
             <Fade
                 in={isOpen}
                 transition={{
-                    enter: { duration: '0.3', ease: 'easeInOut' },
-                    exit: { duration: '0.3', ease: 'easeInOut' }
+                    enter: { duration: '0.1', ease: 'easeInOut' },
+                    exit: { duration: '0.1', ease: 'easeInOut' }
                 }}>
                 <MobileNav />
             </Fade>
