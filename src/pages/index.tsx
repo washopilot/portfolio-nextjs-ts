@@ -33,10 +33,11 @@ const Home = () => {
                     </Box>
                     <Box flexShrink={0} mt={{ base: 4, md: 0 }} ml={{ md: 6 }} textAlign="center">
                         <Box
-                            borderColor="whiteAlpha.800"
+                            borderColor={useColorModeValue('gray.800', 'white')}
+                            bgColor={useColorModeValue('gray.800', 'white')}
                             borderWidth={5}
                             borderStyle="solid"
-                            boxSize={150}
+                            boxSize={130}
                             display="inline-block"
                             borderRadius="full"
                             overflow="auto"
