@@ -1,5 +1,6 @@
 import { Box, Container, Heading, useColorModeValue } from '@chakra-ui/react';
-import Image from 'next/image';
+import Image, { ImageProps } from 'next/image';
+import { useState } from 'react';
 import fotoPerfil from '../../public/assets/images/foto_perfil.jpg';
 import Paragraph from '../components/Paragraph';
 import Section from '../components/Section';
@@ -9,7 +10,7 @@ import { AppLayout } from '../layout/AppLayout';
 //     shouldForwardProp: (prop) => ['width', 'height', 'src', 'alt'].includes(prop)
 // });
 
-export default function Home() {
+const Home = () => {
     return (
         <AppLayout>
             <Container maxW={'max-content'}>
@@ -33,15 +34,14 @@ export default function Home() {
                     <Box flexShrink={0} mt={{ base: 4, md: 0 }} ml={{ md: 6 }} textAlign="center">
                         <Box
                             borderColor="whiteAlpha.800"
-                            borderWidth={3}
+                            borderWidth={5}
                             borderStyle="solid"
-                            w="100px"
-                            h="100px"
+                            boxSize={150}
                             display="inline-block"
                             borderRadius="full"
-                            overflow="hidden"
+                            overflow="auto"
                             position="relative">
-                            <Image
+                            <ImgBlurAnimated
                                 src={fotoPerfil}
                                 alt="Profile image"
                                 fill
@@ -155,4 +155,26 @@ export default function Home() {
             </Container>
         </AppLayout>
     );
-}
+};
+
+// Custom NextJs Img-loader
+const ImgBlurAnimated = (props: ImageProps) => {
+    const [blur, setBlur] = useState(false);
+
+    return (
+        // eslint-disable-next-line jsx-a11y/alt-text
+        <Image
+            {...props}
+            onLoadingComplete={() => setBlur(true)}
+            style={
+                blur
+                    ? { filter: 'blur(0rem)', transition: '0.5s' }
+                    : {
+                          filter: 'blur(1em)'
+                      }
+            }
+        />
+    );
+};
+
+export default Home;
