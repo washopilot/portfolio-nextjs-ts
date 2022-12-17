@@ -1,13 +1,13 @@
 import { CloseIcon, HamburgerIcon } from '@chakra-ui/icons';
-import { useRouter } from 'next/router';
-
 import { Container, Fade, Flex, HStack, IconButton, Stack, useColorModeValue, useDisclosure } from '@chakra-ui/react';
-
+import { useRouter } from 'next/router';
+import { createContext } from 'react';
 import Logo from './Logo';
 import { MobileNav } from './MobileNav';
 import { NAV_ITEMS as Links } from './NavData';
 import NavLink from './NavLink';
 import ThemeToggleButton from './ThemeToggleButton';
+export const IsOpenContext = createContext({} as { onClose: () => void });
 
 const Navbar = () => {
     const { isOpen, onOpen, onClose, onToggle } = useDisclosure();
@@ -15,7 +15,7 @@ const Navbar = () => {
     const router = useRouter();
 
     return (
-        <>
+        <IsOpenContext.Provider value={{ onClose }}>
             <Flex
                 as={'nav'}
                 pos="fixed"
@@ -67,7 +67,7 @@ const Navbar = () => {
                 }}>
                 <MobileNav />
             </Fade>
-        </>
+        </IsOpenContext.Provider>
     );
 };
 

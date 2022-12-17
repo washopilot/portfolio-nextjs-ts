@@ -1,8 +1,11 @@
 import { Link, useColorModeValue } from '@chakra-ui/react';
 import NextLink from 'next/link';
-import { ReactNode } from 'react';
+import { ReactNode, useContext } from 'react';
+import { IsOpenContext } from './Navbar';
 
 const NavLink = ({ children, href, active }: { children: ReactNode; href: string; active: boolean }) => {
+    const { onClose } = useContext(IsOpenContext);
+
     const bg_color_hover = useColorModeValue('gray.200', 'gray.700');
     const bg_color_active = 'purple.700';
 
@@ -17,7 +20,8 @@ const NavLink = ({ children, href, active }: { children: ReactNode; href: string
                 _hover={{
                     textDecoration: 'none',
                     bg: active ? undefined : bg_color_hover
-                }}>
+                }}
+                onClick={() => onClose()}>
                 {children}
             </Link>
         </NextLink>
