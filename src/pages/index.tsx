@@ -1,8 +1,9 @@
 import { ChevronRightIcon } from '@chakra-ui/icons';
-import { Box, Button, Container, Heading, useColorModeValue } from '@chakra-ui/react';
+import { Box, Button, Container, Heading, Link, List, ListItem, useColorModeValue } from '@chakra-ui/react';
 import Image, { ImageProps } from 'next/image';
 import NextLink from 'next/link';
 import { useState } from 'react';
+import { IoLogoFacebook, IoLogoGithub, IoLogoTwitter, IoLogoWhatsapp } from 'react-icons/io5';
 import fotoPerfil from '../../public/assets/images/foto_perfil.jpg';
 import BioSection, { BioYear } from '../components/BioSection';
 import Paragraph from '../components/Paragraph';
@@ -90,7 +91,7 @@ const Home = () => {
                     </BioSection>
                     <BioSection>
                         <BioYear>2007-2017</BioYear>
-                        Diversos proyectos (construcción, consultoría)
+                        Diversos proyectos (construcción, consultoría, fiscalización)
                     </BioSection>
                     <BioSection>
                         <BioYear>2018 a actual</BioYear>
@@ -104,11 +105,45 @@ const Home = () => {
 
                 <Section delay={0.6}>
                     <Heading as="h3" variant="section-title">
-                        Me encanta
+                        Me gusta
                     </Heading>
-                    <Paragraph>
-                        Diseño 3D, Progressive Rock, React, Linux ManjaroKDE
-                    </Paragraph>
+                    <Paragraph>Diseño 3D, Progressive Rock, React, Manjaro Linux</Paragraph>
+                </Section>
+
+                <Section delay={0.6}>
+                    <Heading as="h3" variant="section-title">
+                        En línea
+                    </Heading>
+                    <List>
+                        <ListItem>
+                            <Link href="https://github.com/washopilot" target="_blank">
+                                <Button variant="ghost" colorScheme="purple" leftIcon={<IoLogoGithub />}>
+                                    @washopilot
+                                </Button>
+                            </Link>
+                        </ListItem>
+                        <ListItem>
+                            <Link href="https://twitter.com/washopilot" target="_blank">
+                                <Button variant="ghost" colorScheme="purple" leftIcon={<IoLogoTwitter />}>
+                                    @washopilot
+                                </Button>
+                            </Link>
+                        </ListItem>
+                        <ListItem>
+                            <Link href="https://www.facebook.com/washopilot" target="_blank">
+                                <Button variant="ghost" colorScheme="purple" leftIcon={<IoLogoFacebook />}>
+                                    @washopilot
+                                </Button>
+                            </Link>
+                        </ListItem>
+                        <ListItem>
+                            <Link href="https://wa.me/593967896544" target="_blank">
+                                <Button variant="ghost" colorScheme="purple" leftIcon={<IoLogoWhatsapp />}>
+                                    WhatsApp-0967896544
+                                </Button>
+                            </Link>
+                        </ListItem>
+                    </List>
                 </Section>
             </Container>
         </AppLayout>

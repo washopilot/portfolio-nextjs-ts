@@ -15,7 +15,7 @@ export const MobileNav = () => {
     return (
         <Box
             key={'menu'}
-            p={4}
+            p={3}
             display={{ md: 'none' }}
             pos={'fixed'}
             top={'4em'}
@@ -29,7 +29,7 @@ export const MobileNav = () => {
             }}>
             <Stack as={'nav'} spacing={4}>
                 {Links.map((link, idx) => (
-                    <NavLink key={link.label} href={link.href} active={router.asPath == link.href}>
+                    <NavLink key={link.label} href={link.href} active={router.asPath == link.href} icon={link.icon}>
                         {link.label}
                     </NavLink>
                 ))}

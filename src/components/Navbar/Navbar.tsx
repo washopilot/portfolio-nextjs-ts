@@ -42,9 +42,13 @@ const Navbar = () => {
                         <HStack spacing={8} alignItems={'center'}>
                             <Logo />
 
-                            <HStack as={'nav'} spacing={4} display={{ base: 'none', md: 'flex' }}>
+                            <HStack as={'nav'} spacing={2} display={{ base: 'none', md: 'flex' }}>
                                 {Links.map((link) => (
-                                    <NavLink key={link.label} href={link.href} active={router.asPath == link.href}>
+                                    <NavLink
+                                        key={link.label}
+                                        href={link.href}
+                                        active={router.asPath == link.href}
+                                        icon={link.icon}>
                                         {link.label}
                                     </NavLink>
                                 ))}
