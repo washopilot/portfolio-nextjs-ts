@@ -1,11 +1,10 @@
 import { ChevronRightIcon } from '@chakra-ui/icons';
 import { Box, Button, Container, Heading, Link, List, ListItem, useColorModeValue } from '@chakra-ui/react';
-import Image, { ImageProps } from 'next/image';
 import NextLink from 'next/link';
-import { useState } from 'react';
 import { IoLogoFacebook, IoLogoGithub, IoLogoTwitter, IoLogoWhatsapp } from 'react-icons/io5';
 import fotoPerfil from '../../public/assets/images/foto_perfil.jpg';
 import BioSection, { BioYear } from '../components/BioSection';
+import ImgBlurAnimated from '../components/ImgBlurAnimated';
 import Paragraph from '../components/Paragraph';
 import Section from '../components/Section';
 import { AppLayout } from '../layout/AppLayout';
@@ -41,7 +40,7 @@ const Home = () => {
                             bgColor={useColorModeValue('gray.800', 'white')}
                             borderWidth={3}
                             borderStyle="solid"
-                            boxSize={130}
+                            boxSize={100}
                             display="inline-block"
                             borderRadius="full"
                             overflow="auto"
@@ -50,6 +49,7 @@ const Home = () => {
                                 src={fotoPerfil}
                                 alt="Profile image"
                                 fill
+                                sizes="100vw"
                                 style={{ objectFit: 'cover' }}
                                 placeholder="blur"
                             />
@@ -63,11 +63,9 @@ const Home = () => {
                     <Paragraph>
                         Fernando es un Desarrollador Freelancer radicado en Loja, Ecuador, con una marcada pasión por el
                         mundo tecnológico y el diseño 3D. Primordialmente enfoca sus esfuerzos por la construcción de
-                        nuevos servicios digitales y aprendizaje continuo (para saciar su hambre por código funcional y
-                        elegante) desde la planeación y diseño eficiente para resolver problemas de la vida real que
-                        satisfaga las necesidades de sus clientes. Entusiasta y evangelista del ecosistema de React por
-                        excelencia, siempre se mantiene pendiente de las últimas novedades en el área del desarrollo
-                        Front-End.
+                        nuevos servicios digitales desde la planeación y diseño eficiente para resolver problemas de la
+                        vida real que satisfaga las necesidades de sus clientes. Entusiasta del ecosistema React siempre
+                        se mantiene pendiente de las últimas novedades en el área del desarrollo web.
                     </Paragraph>
                     <Box textAlign="center" my={4}>
                         <NextLink href="/works" passHref scroll={false}>
@@ -91,15 +89,15 @@ const Home = () => {
                     </BioSection>
                     <BioSection>
                         <BioYear>2007-2017</BioYear>
-                        Diversos proyectos (construcción, consultoría, fiscalización)
+                        Diversos proyectos (Consultoría, Fiscalización)
                     </BioSection>
                     <BioSection>
                         <BioYear>2018 a actual</BioYear>
-                        Especialista presupuestos, Compras Públicas
+                        Especialista presupuestos
                     </BioSection>
                     <BioSection>
                         <BioYear>2019 a actual</BioYear>
-                        Freelancer desarrollador web, especialidad Front-End
+                        Freelancer desarrollador Web
                     </BioSection>
                 </Section>
 
@@ -139,7 +137,7 @@ const Home = () => {
                         <ListItem>
                             <Link href="https://wa.me/593967896544" target="_blank">
                                 <Button variant="ghost" colorScheme="purple" leftIcon={<IoLogoWhatsapp />}>
-                                    WhatsApp-0967896544
+                                    WhatsApp
                                 </Button>
                             </Link>
                         </ListItem>
@@ -147,26 +145,6 @@ const Home = () => {
                 </Section>
             </Container>
         </AppLayout>
-    );
-};
-
-// Custom NextJs Img-loader
-const ImgBlurAnimated = (props: ImageProps) => {
-    const [blur, setBlur] = useState(false);
-
-    return (
-        // eslint-disable-next-line jsx-a11y/alt-text
-        <Image
-            {...props}
-            onLoadingComplete={() => setBlur(true)}
-            style={
-                blur
-                    ? { filter: 'blur(0rem)', transition: '0.5s' }
-                    : {
-                          filter: 'blur(1em)'
-                      }
-            }
-        />
     );
 };
 
