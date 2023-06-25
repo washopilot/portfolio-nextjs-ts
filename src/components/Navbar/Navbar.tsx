@@ -26,7 +26,7 @@ const Navbar = () => {
                 zIndex="999"
                 justify={'center'}
                 css={{
-                    backdropFilter: 'blur(2px)',
+                    backdropFilter: 'blur(6px)',
                     backgroundColor: useColorModeValue('rgba(255, 255, 255, 0.8)', 'rgba(26, 32, 44, 0.8)')
                 }}>
                 <Container as={Flex} maxW={'4xl'} align={'center'}>

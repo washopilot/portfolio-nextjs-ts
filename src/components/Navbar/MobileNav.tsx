@@ -24,7 +24,7 @@ export const MobileNav = () => {
             minH={'calc(100vh - 4em)'}
             zIndex={999}
             css={{
-                backdropFilter: 'blur(2px)',
+                backdropFilter: 'blur(6px)',
                 backgroundColor: `${color}`
             }}>
             <Stack as={'nav'} spacing={4}>
