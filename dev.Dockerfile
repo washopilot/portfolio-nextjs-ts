@@ -9,12 +9,13 @@ WORKDIR /cache
 COPY package.json package-lock.json* ./
 RUN npm ci -d && npm cache clean --force
 
+USER node
 WORKDIR /app
-COPY package.json package-lock.json* ./
-COPY src ./src
-COPY public ./public
-COPY next.config.js .
-COPY tsconfig.json .
+# COPY package.json package-lock.json* ./
+# COPY src ./src
+# COPY public ./public
+# COPY next.config.js .
+# COPY tsconfig.json .
 
 # Next.js collects completely anonymous telemetry data about general usage. Learn more here: https://nextjs.org/telemetry
 # Uncomment the following line to disable telemetry at run time

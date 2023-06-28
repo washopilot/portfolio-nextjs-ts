@@ -1,6 +1,19 @@
 version: '3'
 
 services:
+  change-vol-ownership:
+    # We can use any image we want as long as we can chown
+    image: node:18.16.1-alpine3.18
+    # Need a user priviliged enough to chown
+    user: 'root'
+    # Specify the group in question
+    # group_add:
+    #   - 1001
+    volumes:
+      # The volume to chown
+      - ./node_modules:/app/node_modules
+    command: chown -R 'node:node' /app/node_modules
+
   portfolio-next-app:
     container_name: portfolio-next-app
     build:
@@ -14,18 +27,26 @@ services:
     # Set envrionment variables based on the .env file
     # env_file:
     #   - .env
+    user: node
     volumes:
       - ./src:/app/src
       - ./public:/app/public
       - ./node_modules:/app/node_modules
       - ./package.json:/app/package.json
       - ./package-lock.json:/app/package-lock.json
+      - ./next.config.js:/app/next.config.js
+      - ./tsconfig.json:/app/tsconfig.json
+      - ./next-env.d.ts:/app/next-env.d.ts
     # restart: always
     ports:
       - 3000:3000
     networks:
       - next_network
-
+    # command: sh -c 'rsync -arv /cache/node_modules/. /app/node_modules && npm run dev'
+    depends_on:
+      change-vol-ownership:
+        # Wait for the ownership to change
+        condition: service_completed_successfully
   # Add more containers below (nginx, postgres, etc.)
 
 # Define a network, which allows containers to communicate
