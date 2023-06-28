@@ -1,6 +1,8 @@
 FROM node:18.16.1-alpine3.18
 
-RUN apk add --no-cache rsync
+RUN \
+    apk add --no-cache rsync; \
+    apk add --no-cache libc6-compat
 
 WORKDIR /cache
 # Install dependencies based on the preferred package manager
