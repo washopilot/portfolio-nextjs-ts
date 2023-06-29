@@ -1,4 +1,4 @@
-import { Link, useColorModeValue } from '@chakra-ui/react';
+import { Link, TypographyProps, useColorModeValue } from '@chakra-ui/react';
 import NextLink from 'next/link';
 import { ReactNode, useContext } from 'react';
 import { IoLogoGithub } from 'react-icons/io5';
@@ -8,12 +8,14 @@ const NavLink = ({
     children,
     href,
     active,
-    icon
+    icon,
+    fontSize
 }: {
     children: ReactNode;
     href: string;
     active: boolean;
     icon?: string;
+    fontSize?: TypographyProps['fontSize'];
 }) => {
     const { onClose } = useContext(IsOpenContext);
 
@@ -29,7 +31,7 @@ const NavLink = ({
                     px={3}
                     py={1}
                     bg={active ? bg_color_active : undefined}
-                    borderRadius="md"
+                    // borderRadius="md"
                     color={active ? color_active : undefined}
                     fontWeight={active ? 'bold' : undefined}
                     _hover={{
@@ -40,7 +42,8 @@ const NavLink = ({
                     gap={2}
                     alignItems={'center'}
                     onClick={() => onClose()}
-                    variant={'ghost'}>
+                    variant={'ghost'}
+                    fontSize={fontSize}>
                     {icon ? <IoLogoGithub /> : undefined}
                     {children}
                 </Link>

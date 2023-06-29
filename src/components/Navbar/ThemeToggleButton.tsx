@@ -17,6 +17,7 @@ const ThemeToggleButton = () => {
                 <Button
                     onClick={toggleColorMode}
                     color={colorMode == 'dark' ? 'black' : 'white'}
+                    borderRadius={0}
                     bg={useColorModeValue('purple.500', 'orange.300')}>
                     {colorMode === 'light' ? <MoonIcon /> : <SunIcon />}
                 </Button>

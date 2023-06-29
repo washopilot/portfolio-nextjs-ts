@@ -29,7 +29,7 @@ export const MobileNav = () => {
             }}>
             <Stack as={'nav'} spacing={4}>
                 {Links.map((link, idx) => (
-                    <NavLink key={link.label} href={link.href} active={router.asPath == link.href} icon={link.icon}>
+                    <NavLink key={link.label} href={link.href} active={router.asPath == link.href} icon={link.icon} fontSize={'3xl'}>
                         {link.label}
                     </NavLink>
                 ))}

@@ -35,6 +35,7 @@ const Navbar = () => {
                             size={'md'}
                             icon={isOpen ? <CloseIcon /> : <HamburgerIcon />}
                             aria-label={'Open Menu'}
+                            borderRadius={0}
                             display={{ md: 'none' }}
                             onClick={onToggle}
                         />
@@ -48,7 +49,8 @@ const Navbar = () => {
                                         key={link.label}
                                         href={link.href}
                                         active={router.asPath == link.href}
-                                        icon={link.icon}>
+                                        icon={link.icon}
+                                        fontSize={'larger'}>
                                         {link.label}
                                     </NavLink>
                                 ))}
