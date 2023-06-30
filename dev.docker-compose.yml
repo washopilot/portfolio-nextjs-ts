@@ -1,23 +1,11 @@
 version: '3'
 
 services:
-  change-vol-ownership:
-    build: 
-      context: .
-      dockerfile: dev.Dockerfile
-      target: change-vol
-    volumes:
-      - ./node_modules:/app/node_modules
-    networks:
-      - next_network
-    command: chown -R node:nodejs /app/node_modules
-
   portfolio-next-app:
     container_name: portfolio-next-app
     build:
       context: .
       dockerfile: dev.Dockerfile
-      target: builder-runner
     # Set environment variables directly in the docker-compose file
     # environment:
     #   ENV_VARIABLE: ${ENV_VARIABLE}
@@ -40,11 +28,6 @@ services:
       - 3000:3000
     networks:
       - next_network
-    command: sh -c 'rsync -arv --delete --ignore-existing /cache/node_modules/. /app/node_modules && npm run dev'
-    depends_on:
-      change-vol-ownership:
-        # Wait for the ownership to change
-        condition: service_completed_successfully
   # Add more containers below (nginx, postgres, etc.)
 
 # Define a network, which allows containers to communicate
