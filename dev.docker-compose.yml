@@ -1,38 +1,33 @@
 version: '3'
 
 services:
-  portfolio-next-app:
-    container_name: portfolio-next-app
-    build:
-      context: .
-      dockerfile: dev.Dockerfile
-    # Set environment variables directly in the docker-compose file
-    # environment:
-    #   ENV_VARIABLE: ${ENV_VARIABLE}
-    #   NEXT_PUBLIC_ENV_VARIABLE: ${NEXT_PUBLIC_ENV_VARIABLE}
+    portfolio-next-app:
+        container_name: portfolio-next-app
+        build:
+            context: .
+            dockerfile: dev.Dockerfile
+        # Set environment variables directly in the docker-compose file
+        # environment:
+        #   ENV_VARIABLE: ${ENV_VARIABLE}
+        #   NEXT_PUBLIC_ENV_VARIABLE: ${NEXT_PUBLIC_ENV_VARIABLE}
 
-    # Set envrionment variables based on the .env file
-    # env_file:
-    #   - .env
-    volumes:
-      - ./src:/app/src
-      - ./public:/app/public
-      - ./node_modules:/app/node_modules
-      - ./package.json:/app/package.json
-      - ./package-lock.json:/app/package-lock.json
-      - ./next.config.js:/app/next.config.js
-      - ./tsconfig.json:/app/tsconfig.json
-      - ./next-env.d.ts:/app/next-env.d.ts
-    # restart: always
-    ports:
-      - 3000:3000
-    networks:
-      - next_network
-  # Add more containers below (nginx, postgres, etc.)
+        # Set envrionment variables based on the .env file
+        # env_file:
+        #   - .env
+        volumes:
+            - type: bind
+              source: ./
+              target: /app
+        # restart: always
+        ports:
+            - 3000:3000
+        networks:
+            - next_network
+    # Add more containers below (nginx, postgres, etc.)
 
 # Define a network, which allows containers to communicate
 # with each other, by using their container name as a hostname
 networks:
-  next_network:
-    name: portfolio-next-app-network
-    external: false
+    next_network:
+        name: portfolio-next-app-network
+        external: false
