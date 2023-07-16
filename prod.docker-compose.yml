@@ -16,7 +16,7 @@ services:
     #   - .env
     # restart: always
     ports:
-      - 3000:3000
+      - 3000
     networks:
       - next_network
 
@@ -26,5 +26,5 @@ services:
 # with each other, by using their container name as a hostname
 networks:
   next_network:
-    name: portfolio-next-app-network
+    name: portfolio-network
     external: false
